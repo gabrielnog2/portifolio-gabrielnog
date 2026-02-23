@@ -14,7 +14,7 @@
   <tr>
     <td width="800px">
       <div align="justify">
-        Este <b>README.md</b> apresenta o detalhamento do meu portifólio profissional desenvolvido no decorrer da disciplina de Laboratório de Desenvolvimento de Software do curso de Engenharia de Software na PUC Minas, de forma a servir como referência de documentação para o projeto. 
+        Este <b>README.md</b> apresenta o detalhamento do meu portifólio profissional desenvolvido para a disciplina de Laboratório de Desenvolvimento de Software do curso de Engenharia de Software na PUC Minas, de forma a servir como referência de documentação para o projeto. 
       </div>
     </td>
     <td>
@@ -28,9 +28,6 @@
 ---
 
 ## 🚧 Status do Projeto
-
-### Exemplos de badges básicos:
-
 
 
 
@@ -65,96 +62,51 @@
 ## 🔗 Links Úteis
 * 🌐 **Demo Online:** [Acesse a Aplicação Web](<link-da-demo-web>)
   > 💻 **Descrição:** Link para a aplicação em ambiente de produção (Ex: hospedado na Vercel, Netlify ou AWS S3).
-* 📱 **Download Mobile:** [App Store](<link-app-store>) | [Google Play](<link-google-play>) | [APK Direto](<link-para-apk-direto>)
-  > 📱 **Descrição:** Links diretos para download nas lojas de aplicativos (se aplicável) e para o arquivo de instalação direta no Android (APK).
-* 📖 **Documentação:** [Leia a Wiki/Docs](<link-para-docs>)
-  > 📚 **Descrição:** Acesso à documentação técnica completa do projeto (Ex: Swagger/OpenAPI para API, ou Wiki interna).
 
 ---
 
 ## 📝 Sobre o Projeto
-Nesta seção, descreva de forma clara e objetiva **o propósito do seu projeto**, explicando:
 
-- **Por que ele existe** — qual motivação levou à sua criação.  
-- **Qual problema ele resolve** — que dor, necessidade ou oportunidade ele atende.  
-- **Qual o contexto** — acadêmico, profissional, pessoal, experimental, etc.  
-- **Onde ele pode ser utilizado** — cenários reais ou simulados.  
-
-Procure responder perguntas como:
-- *Qual foi a ideia inicial do projeto?*
-- *O que ele entrega de valor ao usuário?*
-- *Por que alguém utilizaria ou contribuiria com esse projeto?*
-- *O que o torna relevante ou interessante?*
-
-Escreva de forma objetiva, mas completa, para que qualquer pessoa entenda rapidamente **o que é** e **por que importa**.
-
-> [!NOTE]
-> Esta seção segue boas práticas de documentação profissional e deve ser ajustada conforme o tipo e o objetivo do seu projeto.
-
----
+Este projeto consiste no desenvolvimento de um Website de Portfólio Profissional, criado com o objetivo de apresentar minha trajetória acadêmica, habilidades técnicas, projetos desenvolvidos e formas de contato. A motivação para sua criação surgiu da necessidade de consolidar, em um único ambiente, minhas experiências, competências e produções acadêmicas e profissionais. O projeto está sendo conduzido no contexto acadêmico da disciplina de laboratório de desenvolvimento de software, envolvendo etapas que contemplam desde o planejamento e prototipação à implementação e hospedagem. Ele contribui não somente em termos acadêmicos mas também no enriquecimento do posicionamento como profissional na engenharia de software.
 
 ## ✨ Funcionalidades Principais
-Liste as funcionalidades de forma clara e objetiva.
 
-- 🔐 **Autenticação Segura:** Login, Cadastro e Recuperação de Senha.
-- 📈 **Painel de Controle:** Visualização de dados em tempo real com gráficos.
-- ⚙️ **Gerenciamento de CRUD:** Criação, Leitura, Atualização e Deleção de recursos (e.g., Usuários, Itens, Posts).
+O portifólio simula um Walkman dos anos 80 mas com estética cósmica e futurista. Cada seção do portfólio representa uma faixa, navegável por meio de controles simulando botões físicos, promovendo uma experiência interativa diferenciada.
+
+- 🎵 **Navegação:** Cada seção (Sobre Mim, Projetos, Experiências e Contato) funciona como uma música da fita, permitindo avançar, retroceder e tocar música utilizando botões simulados.
+- 🖥️ **Single Page Application (SPA):** A troca de conteúdo acontece dinamicamente sem recarregamento da página, utilizando gerenciamento de estado com React.
+- 🗂️ **Timeline de Projetos:** Exibição organizada dos projetos do mais antigo ao mais recente, contendo descrição, tecnologias utilizadas e link para o repositório no GitHub.
 - 📊 **Relatórios Exportáveis:** Exportação de dados em PDF, CSV ou Excel.
-- 🌐 **Internacionalização (i18n):** Suporte a múltiplos idiomas.
-- 🧵 **Logs e Monitoramento:** Registro detalhado de atividades e análise de desempenho.
-- 🔄 **Integração com APIs Externas:** Conexão com serviços de terceiros (pagamentos, mapas, autenticação, etc.).
-- 📨 **Sistema de Notificações:** Envio de alertas por e-mail, push ou notificações internas.
+- 🌍 **Versão Bilíngue (PT/EN):** Suporte a inglês e português.
+- 📬 **Contato Interativo:** Ícones clicáveis para e-mail, LinkedIn e WhatsApp, além de possibilidade funcional para envio de mensagens.
 
 ---
 
 ## 🛠 Tecnologias Utilizadas
 
-As seguintes ferramentas, frameworks e bibliotecas foram utilizados na construção deste projeto. Recomenda-se o uso das versões listadas (ou superiores) para garantir a compatibilidade.
+💻 React: Biblioteca principal para a construção da interface.
+⚙️ Vite: Ferramenta de build para um desenvolvimento rápido e otimizado.
 
-### 💻 Front-end
 
-* **Framework/Biblioteca:** [Ex: React v18, Vue.js v3, Angular v17]
-* **Linguagem/Superset:** [Ex: TypeScript, JavaScript ES6+]
-* **Estilização:** [Ex: Tailwind CSS, Sass, Styled Components, Material UI]
-* **Gerenciamento de Estado:** [Ex: Redux Toolkit, Zustand, Context API]
-* **Build Tool:** [Ex: Vite, Webpack]
+---
 
-### 🖥️ Back-end
+## 📦 Dependências
 
-* **Linguagem/Runtime:** [Ex: Java 17 (JDK), Node.js v20, Python 3.11]
-* **Framework:** [Ex: Spring Boot 3.x, NestJS, Express, Django]
-* **Banco de Dados:** [Ex: PostgreSQL, MySQL, MongoDB]
-* **ORM / Query Builder:** [Ex: Hibernate/JPA, Prisma, TypeORM]
-* **Autenticação:** [Ex: JWT, OAuth2, Spring Security]
+O projeto utiliza as seguintes dependências principais:
 
-### 📱 Mobile (Opcional)
+- react: Biblioteca principal para construção da interface baseada em componentes.
 
-* **Framework:** [Ex: React Native, Flutter, Kotlin Multiplatform]
-* **Ferramentas:** [Ex: Expo, Android Studio, Xcode]
+- react-dom: Responsável por renderizar os componentes React na aplicação web.
 
-### ⚙️ Infraestrutura & DevOps
+- react-icons: Utilizada para adicionar ícones personalizados aos controles do Walkman (play, pause, next, previous).
 
-* **Containerização:** [Ex: Docker, Docker Compose]
-* **Orquestração:** [Ex: Kubernetes (K8s)]
-* **Cloud:** [Ex: AWS (EC2, RDS, S3), Vercel, Heroku, Google Cloud]
-* **CI/CD:** [Ex: GitHub Actions, Jenkins, SonarQube]
+- emailjs-com: Permite envio de mensagens pelo formulário de contato diretamente pelo frontend, sem necessidade de backend próprio.
 
 ---
 
 ## 🏗 Arquitetura
 
-Descreva aqui a **arquitetura completa do sistema**, explicando como as camadas, módulos e componentes foram organizados. Informe também **por que** essa arquitetura foi escolhida e **quais problemas ela ajuda a resolver**.
-
-Você pode incluir:
-
-- **Visão geral da arquitetura** (ex.: camadas, módulos, microsserviços, monólito modular, hexagonal, MVC etc.)
-- **Principais componentes** e o papel de cada um
-- **Padrões de design adotados** (ex.: Repository, Service Layer, DTOs, Factory, Observer)
-- **Fluxo de dados** entre as partes do sistema
-- **Tecnologias utilizadas em cada camada**
-- **Decisões arquiteturais importantes**
-- **Trade-offs** ou limitações relevantes
-
+O sistema é desenvolvido utilizando uma arquitetura SPA (Single Page Application) baseada em componentes, com organização modular no frontend. Trata-se de uma aplicação monolítica modular no frontend, construída com React, onde toda a lógica de navegação e renderização ocorre no cliente (client-side rendering).
 
 
 ## 🔗 Documentações utilizadas
@@ -163,25 +115,10 @@ Liste aqui links para documentação técnica, referências de bibliotecas compl
 
 * 📖 **Framework/Biblioteca (Front-end):** [Documentação Oficial do **React**](https://react.dev/reference/react)
 * 📖 **Build Tool (Front-end):** [Guia de Configuração do **Vite**](https://vitejs.dev/config/)
-* 📖 **Framework (Back-end):** [Documentação Oficial do **Spring Boot**](https://docs.spring.io/spring-boot/docs/current/reference/html/)
-* 📖 **Containerização:** [Documentação de Referência do **Docker**](https://docs.docker.com/)
+* 📖 **Gerenciamento de Estado (Hooks)**: React Hooks API Reference – (https://react.dev/reference/react)
 * 📖 **Guia de Estilo:** [**Conventional Commits** (Padrão de Mensagens)](https://www.conventionalcommits.org/en/v1.0.0/)
 * 📖 **Documentação Interna:** [Design System do Projeto](./docs/design-system.md)
 
----
-
-## 👥 Autores
-Liste os principais contribuidores. Você pode usar links para seus perfis.
-
-| 👤 Nome | 🖼️ Foto | :octocat: GitHub | 💼 LinkedIn | 📤 Gmail |
-|---------|----------|-----------------|-------------|-----------|
-| Nome 1  | <div align="center"><img src="https://joaopauloaramuni.github.io/image/aramunilogo.png" width="70px" height="70px"></div> | <div align="center"><a href="https://github.com/user1"><img src="https://joaopauloaramuni.github.io/image/github6.png" width="50px" height="50px"></a></div> | <div align="center"><a href="https://www.linkedin.com/in/user1"><img src="https://joaopauloaramuni.github.io/image/linkedin2.png" width="50px" height="50px"></a></div> | <div align="center"><a href="mailto:user1@gmail.com"><img src="https://joaopauloaramuni.github.io/image/gmail3.png" width="50px" height="50px"></a></div> |
-| Nome 2  | <div align="center"><img src="https://joaopauloaramuni.github.io/image/aramunilogo.png" width="70px" height="70px"></div> | <div align="center"><a href="https://github.com/user2"><img src="https://joaopauloaramuni.github.io/image/github6.png" width="50px" height="50px"></a></div> | <div align="center"><a href="https://www.linkedin.com/in/user2"><img src="https://joaopauloaramuni.github.io/image/linkedin2.png" width="50px" height="50px"></a></div> | <div align="center"><a href="mailto:user2@gmail.com"><img src="https://joaopauloaramuni.github.io/image/gmail3.png" width="50px" height="50px"></a></div> |
-
-> [!TIP]
-> 💡 **Dica:** Escolha uma foto profissional, preferencialmente de rosto, evitando imagens com baixa qualidade, filtros excessivos ou elementos distrativos.
-
----
 
 
 ---
