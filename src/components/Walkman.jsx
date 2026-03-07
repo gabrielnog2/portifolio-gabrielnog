@@ -2,8 +2,8 @@ import { useState } from "react";
 import Controls from "./Controls";
 import "./Walkman.css";
 
-
-function Walkman({ title, next, prev, play, isPlaying = true }) {
+// Adicionamos 'stop' às props para receber a função do App.jsx
+function Walkman({ title, next, prev, play, stop, isPlaying = false }) {
   const [seekState, setSeekState] = useState(null);
 
   const handleNext = () => {
@@ -22,10 +22,16 @@ function Walkman({ title, next, prev, play, isPlaying = true }) {
     }, 500);
   };
 
+  // Lógica de animação das rodinhas (Reels)
   let reelClass = "";
-  if (seekState === "fwd") reelClass = "spinning-fast-fwd";
-  else if (seekState === "rev") reelClass = "spinning-fast-rev";
-  else if (isPlaying) reelClass = "spinning-realistic";
+  if (seekState === "fwd") {
+    reelClass = "spinning-fast-fwd";
+  } else if (seekState === "rev") {
+    reelClass = "spinning-fast-rev";
+  } else if (isPlaying) {
+    // Só gira se o isPlaying vindo do App for true (após o PLAY)
+    reelClass = "spinning-realistic";
+  }
 
   return (
     <div className="viewport">
@@ -47,7 +53,6 @@ function Walkman({ title, next, prev, play, isPlaying = true }) {
 
           <div className="cassette-door">
             <div className="glass-window">
-            
               <svg viewBox="0 0 450 280" preserveAspectRatio="xMidYMid meet" className="cassette-svg">
                 <defs>
                   <mask id="windowHole">
@@ -85,6 +90,7 @@ function Walkman({ title, next, prev, play, isPlaying = true }) {
                 <rect x="55" y="35" width="340" height="210" rx="8" fill="#000" opacity="0.3" />
                 <rect x="110" y="95" width="230" height="65" rx="4" fill="#0c0c0e" />
 
+                {/* Rolo Esquerdo */}
                 <g className={reelClass} style={{ transformOrigin: '155px 127px' }}>
                   <circle cx="155" cy="127" r="28" fill="#3a281c" /> 
                   <circle cx="155" cy="127" r="16" fill="url(#metalHub)" /> 
@@ -93,6 +99,7 @@ function Walkman({ title, next, prev, play, isPlaying = true }) {
                   <polygon points="152,124 158,124 155,130" fill="#fff" opacity="0.5" /> 
                 </g>
 
+                {/* Rolo Direito */}
                 <g className={reelClass} style={{ transformOrigin: '295px 127px' }}>
                   <circle cx="295" cy="127" r="20" fill="#3a281c" /> 
                   <circle cx="295" cy="127" r="16" fill="url(#metalHub)" /> 
@@ -105,7 +112,6 @@ function Walkman({ title, next, prev, play, isPlaying = true }) {
 
                 <g mask="url(#windowHole)">
                   <rect x="65" y="45" width="320" height="135" rx="5" fill="#f4e6b5" />
-                  
                   
                   <text x="225" y="85" textAnchor="middle" className="quill-handwriting" transform="rotate(-1 225 85)">
                     {title || "Portifolio Mix Vol. 1"}
@@ -134,12 +140,12 @@ function Walkman({ title, next, prev, play, isPlaying = true }) {
                 <circle cx="225" cy="230" r="3" fill="#111" />
 
               </svg>
-
             </div>
           </div>
 
           <div className="controls-wrapper-realistic">
-            <Controls next={handleNext} prev={handlePrev} play={play} />
+            {/* Agora passamos tanto o play quanto o stop para o componente Controls */}
+            <Controls next={handleNext} prev={handlePrev} play={play} stop={stop} />
           </div>
         </div>
       </main>

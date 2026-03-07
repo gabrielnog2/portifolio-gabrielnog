@@ -13,7 +13,7 @@ function Contato() {
   const content = {
     pt: {
       vol: "AWESOME MIX VOL. 4",
-      title: "CONTATO", // Voltando ao padrão das outras seções
+      title: "CONTATO",
       btnLang: "SWITCH TO ENGLISH",
       channelsTitle: "FREQUÊNCIAS ABERTAS //",
       formTitle: "TERMINAL DE MENSAGENS INTERGALÁCTICAS",
@@ -54,25 +54,17 @@ function Contato() {
     const time = new Date().toLocaleString();
     const { nome, email, mensagem } = formData;
 
-    const sendToMe = emailjs.send(
+    
+    emailjs.send(
       EMAILJS_CONFIG.SERVICE_ID,
-      EMAILJS_CONFIG.TEMPLATE_ID_FOR_ME,
+      EMAILJS_CONFIG.TEMPLATE_ID, 
       { name: nome, email: email, message: mensagem, title: `Uplink de: ${nome}`, time: time },
       EMAILJS_CONFIG.PUBLIC_KEY
-    );
-
-    const sendToSender = emailjs.send(
-      EMAILJS_CONFIG.SERVICE_ID,
-      EMAILJS_CONFIG.TEMPLATE_ID_FOR_SENDER,
-      { name: nome, email: email, message: mensagem, title: "Transmissão Recebida!", time: time },
-      EMAILJS_CONFIG.PUBLIC_KEY
-    );
-
-    Promise.all([sendToMe, sendToSender])
+    )
       .then(() => {
         setStatus('SUCCESS');
-        setFormData({ nome: '', email: '', mensagem: '' });
-        setTimeout(() => setStatus('IDLE'), 5000);
+        setFormData({ nome: '', email: '', mensagem: '' }); 
+        setTimeout(() => setStatus('IDLE'), 5000); 
       })
       .catch((err) => {
         console.error("Falha no Uplink:", err);
@@ -83,7 +75,7 @@ function Contato() {
 
   return (
     <div className="contato-container fade-in">
-      {/* Controles de Topo - Padrão */}
+     
       <div className="projetos-top-controls">
         <div className="system-readout ravager-readout">
           <span className="blinking-dot orange-dot"></span>
@@ -94,7 +86,7 @@ function Contato() {
         </button>
       </div>
 
-      {/* Cabeçalho - Estética Padrão das Sessões */}
+     
       <div className="projetos-header">
         <p className="tape-volume">{current.vol}</p>
         <h2 className="section-title hud-title">{current.title}</h2>
@@ -102,7 +94,7 @@ function Contato() {
 
       <div className="milano-dashboard-grid">
         
-        {/* LADO ESQUERDO: Frequências (Redes) */}
+        
         <div className="comms-panel hacked-panel">
           <div className="panel-top-bar orange-bar">
             <span>{current.channelsTitle}</span>
@@ -115,17 +107,17 @@ function Contato() {
           </div>
 
           <div className="social-links-container">
-            <a href="mailto:seuemail@exemplo.com" className="milano-target" target="_blank" rel="noopener noreferrer">
+            <a href="https://gmail.com" className="milano-target" target="_blank" rel="noopener noreferrer">
               <span className="icon-box">✉</span>
               <span className="target-name">E-MAIL UPLINK</span>
               <div className="target-line"></div>
             </a>
-            <a href="https://wa.me/5511999999999" className="milano-target" target="_blank" rel="noopener noreferrer">
+            <a href="https://instagram.com" className="milano-target" target="_blank" rel="noopener noreferrer">
               <span className="icon-box">💬</span>
               <span className="target-name">COMUNICADOR</span>
               <div className="target-line"></div>
             </a>
-            <a href="https://linkedin.com/in/seuperfil" className="milano-target" target="_blank" rel="noopener noreferrer">
+            <a href="https://linkedin.com" className="milano-target" target="_blank" rel="noopener noreferrer">
               <span className="icon-box">🔗</span>
               <span className="target-name">REDE PROFISSIONAL</span>
               <div className="target-line"></div>
@@ -133,7 +125,7 @@ function Contato() {
           </div>
         </div>
 
-        {/* LADO DIREITO: Transmissor (Formulário) */}
+        
         <div className="launch-panel tape-deck-panel">
           <div className="rocket-tape-stripes"></div>
           
@@ -143,7 +135,7 @@ function Contato() {
           </div>
           
           <form className="milano-form" onSubmit={handleFireMessage}>
-            {/* GRID DO FORMULÁRIO */}
+           
             <div className="form-grid-layout">
               
               <div className="input-group gotg-input">
@@ -183,7 +175,7 @@ function Contato() {
               </div>
             </div>
 
-            {/* STATUS DO SISTEMA */}
+            
             <div className="form-footer-action">
               <div className="status-container">
                 {status !== 'IDLE' ? (
@@ -197,7 +189,7 @@ function Contato() {
                 )}
               </div>
 
-              {/* BOTÃO */}
+              
               <div className="fire-control-wrapper">
                 <button 
                   type="submit" 

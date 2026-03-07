@@ -16,7 +16,6 @@ function Experiencia() {
     setActiveExpIndex(index);
   };
 
-  
   useEffect(() => {
     if (isDecrypting) {
       const timer = setTimeout(() => {
@@ -39,34 +38,34 @@ function Experiencia() {
           id: 1,
           logId: "LOG-A77.1",
           coords: "SCT-09 // LAT-B",
-          company: "Nova Corp IT",
-          role: "Engenheiro de Sistemas",
-          period: "2023 - Presente",
+          company: "Vallourec",
+          role: "Suporte de Sistemas",
+          period: "2025 - Presente",
           status: "EM CURSO",
-          desc: "Manutenção de infraestrutura crítica e automação de processos em ambientes cloud distribuídos. Implementação de rotinas de CI/CD para garantir a integridade dos sistemas de comunicação da frota.",
-          tech: ["Cloud", "DevOps", "Python", "CI/CD"]
+          desc: "Atuação na tratativa e resolução de anomalias e erros do sistema empresarial utilizado para solicitações de viagens corporativas. Também estou desenvolvendo o agente de Inteligência Artificial para atendimento aos clientes internos da empresa.",
+          tech: ["Troubleshooting", "SQL", "Python", "Copilot Studio"]
         },
         {
           id: 2,
           logId: "LOG-X22.4",
           coords: "XND-44 // SEC-7",
-          company: "Xandar Tech",
-          role: "Analista de Suporte",
-          period: "2021 - 2023",
+          company: "Supersonic",
+          role: "Analista de UX/UI",
+          period: "2023 - 2024",
           status: "CONCLUÍDA",
-          desc: "Resolução de anomalias em sistemas de comunicação e suporte a frotas de usuários em larga escala. Neutralização de bugs críticos e otimização de banco de dados intergalático.",
-          tech: ["Troubleshooting", "SQL", "Networking"]
+          desc: "Projeção e desenvolvimento de interfaces de usuário e experiências de navegação.",
+          tech: ["Figma", "Frontend", "XML", "SEO", "Google Analytics"]
         },
         {
           id: 3,
           logId: "LOG-E01.9",
           coords: "TER-01 // NY-HQ",
-          company: "Stark Expo",
-          role: "Estagiário de Tech",
-          period: "2019 - 2020",
+          company: "Freelancer",
+          role: "Consultora Esportiva",
+          period: "2020 - 2021",
           status: "ARQUIVADA",
-          desc: "Auxílio na organização de eventos técnicos e suporte à demonstração de protótipos de hardware avançado. Gerenciamento de rede local para os expositores VIPs.",
-          tech: ["Eventos", "Hardware", "Redes"]
+          desc: "Edição e estruturação de vídeos de melhores momentos de atletas de futebol para fins de recrutamento para bolsas esportivas no exterior.",
+          tech: ["Vegas Pro", "Adobe", "Análise de Desempenho"]
         }
       ]
     },
@@ -82,34 +81,34 @@ function Experiencia() {
           id: 1,
           logId: "LOG-A77.1",
           coords: "SCT-09 // LAT-B",
-          company: "Nova Corp IT",
-          role: "Systems Engineer",
-          period: "2023 - Present",
+          company: "Vallourec",
+          role: "Systems Support",
+          period: "2025 - Present",
           status: "ONGOING",
-          desc: "Critical infrastructure maintenance and process automation in distributed cloud environments. CI/CD routine implementation to ensure fleet communication system integrity.",
-          tech: ["Cloud", "DevOps", "Python", "CI/CD"]
+          desc: "Handling and resolving anomalies and errors in the enterprise system used for corporate travel requests. I am also developing the Artificial Intelligence agent for internal customer service.",
+          tech: ["Troubleshooting", "SQL", "Python", "Copilot Studio"]
         },
         {
           id: 2,
           logId: "LOG-X22.4",
           coords: "XND-44 // SEC-7",
-          company: "Xandar Tech",
-          role: "Support Analyst",
-          period: "2021 - 2023",
+          company: "Supersonic",
+          role: "UX/UI Analyst",
+          period: "2023 - 2024",
           status: "COMPLETED",
-          desc: "Communication system anomaly resolution and large-scale user fleet support. Critical bug neutralization and intergalactic database optimization.",
-          tech: ["Troubleshooting", "SQL", "Networking"]
+          desc: "Design and development of user interfaces and navigation experiences.",
+          tech: ["Figma", "Frontend", "XML", "SEO", "Google Analytics"]
         },
         {
           id: 3,
           logId: "LOG-E01.9",
           coords: "TER-01 // NY-HQ",
-          company: "Stark Expo",
-          role: "Tech Intern",
-          period: "2019 - 2020",
+          company: "Freelancer",
+          role: "Sports Consultant",
+          period: "2020 - 2021",
           status: "ARCHIVED",
-          desc: "Assisting in technical event organization and advanced hardware prototype demonstration support. Local network management for VIP exhibitors.",
-          tech: ["Events", "Hardware", "Networks"]
+          desc: "Editing and structuring highlight videos of soccer athletes for recruitment purposes for sports scholarships abroad.",
+          tech: ["Vegas Pro", "Adobe", "Performance Analysis"]
         }
       ]
     }
@@ -138,7 +137,6 @@ function Experiencia() {
 
       <div className="mission-deck-layout">
         
-   
         <aside className="mission-list-panel">
           <div className="mission-list-header">
             <span>{current.missionLog}</span>
@@ -158,7 +156,6 @@ function Experiencia() {
                   <span className="mission-nav-company">@ {exp.company}</span>
                 </div>
 
-              
                 {index === activeExpIndex && (
                   <div className="audio-visualizer">
                     <div className="bar"></div>
@@ -174,7 +171,6 @@ function Experiencia() {
         <main className="mission-briefing-panel">
           <div className="hud-screen">
             
-           
             {isDecrypting && (
               <div className="decryption-overlay">
                 <div className="spinner"></div>
@@ -214,7 +210,7 @@ function Experiencia() {
               </div>
             </div>
 
-            {/* Elementos Decorativos da Tela */}
+            
             <div className="hud-corner top-left"></div>
             <div className="hud-corner top-right"></div>
             <div className="hud-corner bottom-left"></div>

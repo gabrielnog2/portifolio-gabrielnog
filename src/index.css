@@ -116,29 +116,64 @@ body::after {
   opacity: 0.6;
 }
 
-/* WALKMAN */
+/* ========================================= */
+/* WALKMAN - Padrão (Telas Grandes)          */
+/* ========================================= */
 .walkman-widget {
   position: fixed;
   bottom: 20px;
   right: 20px;
   z-index: 100;
-  transform: scale(0.45);
+  transform: scale(0.45); /* Base de escala original */
   transform-origin: bottom right;
+  transition: all 0.3s ease; /* Faz o Walkman encolher suavemente */
 }
 
+/* ========================================= */
+/* RESPONSIVIDADE - ADAPTAÇÃO DE PAINÉIS     */
+/* ========================================= */
+
+
+@media (max-width: 1024px) {
+  .main-content-area {
+    margin-right: 150px; 
+  }
+  .walkman-widget {
+    transform: scale(0.35); 
+  }
+}
 
 @media (max-width: 900px) {
   .main-content-area {
     margin-right: 0;
-    margin-bottom: 150px; 
-    min-height: 70vh;  
-    height: auto;      
+    margin-bottom: 0; 
+    min-height: 70vh;
+  }
+  
+
+  .sci-fi-monitor {
+    padding-bottom: 180px; 
   }
 
   .walkman-widget {
+   
+    right: auto;
+    left: 50%;
     bottom: 0;
-    right: 50%;
-    transform: translateX(50%) scale(0.35);
+    transform: translateX(-50%) scale(0.30);
     transform-origin: bottom center;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .sci-fi-monitor {
+    padding-bottom: 150px; 
+    padding-left: 1.5rem; 
+    padding-right: 1.5rem;
+  }
+
+  .walkman-widget {
+    transform: translateX(-50%) scale(0.25); 
   }
 }
