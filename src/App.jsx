@@ -21,28 +21,28 @@ function App() {
       id: "01",
       vol: "VOL. 1",
       title: "SOBRE MIM",
-      audio: "/01 Hooked On a Feeling.m4a",
+      audio: "/08 Come and Get Your Love.m4a",
       component: <Sobre language={language} toggleLanguage={toggleLanguage} />
     },
     {
       id: "02",
       vol: "VOL. 2",
       title: "PROJETOS",
-      audio: "/02 Go All the Way.m4a",
+      audio: "/07 I Want You Back.m4a",
       component: <Projetos language={language} toggleLanguage={toggleLanguage} />
     },
     {
       id: "03",
       vol: "VOL. 3",
       title: "EXPERIÊNCIA",
-      audio: "/03 Spirit In the Sky.m4a",
+      audio: "/10 Escape (The Pina Colada Song).m4a",
       component: <Experiencia language={language} toggleLanguage={toggleLanguage} />
     },
     {
       id: "04",
       vol: "VOL. 4",
       title: "CONTATO",
-      audio: "/04 Moonage Daydream.m4a",
+      audio: "/12 Ain't No Mountain High Enough.m4a",
       component: <Contato language={language} toggleLanguage={toggleLanguage} />
     }
   ];

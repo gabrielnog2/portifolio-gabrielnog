@@ -88,3 +88,60 @@
   text-shadow: 0 0 5px #ffc107;
 }
 
+/* ========================================= */
+/* RESPONSIVIDADE - ADAPTAÇÃO DO HEADER      */
+/* ========================================= */
+
+/* TABLETS E TELAS MÉDIAS */
+@media (max-width: 900px) {
+  .gotg-logo-inner {
+    padding: 15px 30px 20px 30px;
+  }
+  .gotg-text-top {
+    font-size: 1.2rem;
+    letter-spacing: 10px;
+    margin-left: 10px;
+  }
+  .gotg-text-bottom {
+    font-size: 3rem;
+  }
+}
+
+/* SMARTPHONES (Celulares comuns) */
+@media (max-width: 600px) {
+  .header-wrapper {
+    top: 20px; /* Sobe o header um pouco para liberar espaço */
+    width: 95%; /* Garante que o contêiner não vaze a tela */
+  }
+  .gotg-logo-inner {
+    padding: 10px 15px 15px 15px; /* Reduz o preenchimento inútil nas bordas */
+  }
+  .gotg-text-top {
+    font-size: 0.9rem;
+    letter-spacing: 6px; /* Reduz drasticamente o espaço entre as letras */
+    margin-left: 6px;
+    margin-bottom: -2px;
+  }
+  .gotg-text-bottom {
+    font-size: 1.8rem; /* Reduz a fonte principal pela metade */
+    -webkit-text-stroke: 1px #ffc107; /* Afina a borda dourada para não emaranhar as letras */
+    text-shadow: 0 0 10px rgba(255, 165, 0, 0.9);
+  }
+  .gotg-vol-outer {
+    bottom: -10px;
+    right: 5%;
+    transform: scale(0.8); /* Encolhe a fita laranja do volume */
+  }
+}
+
+/* SMARTPHONES PEQUENOS (Telas muito estreitas) */
+@media (max-width: 400px) {
+  .gotg-text-top {
+    font-size: 0.75rem;
+    letter-spacing: 4px;
+    margin-left: 4px;
+  }
+  .gotg-text-bottom {
+    font-size: 1.5rem;
+  }
+}
