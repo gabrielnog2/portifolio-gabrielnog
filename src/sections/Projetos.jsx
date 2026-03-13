@@ -4,12 +4,12 @@ import fabricaImg from '../assets/fabric.png';
 import budgetImg from '../assets/budget.png';
 import reiImg from '../assets/rei.png';
 
-function Projetos() {
-  const [language, setLanguage] = useState('pt');
-
-  const toggleLanguage = () => {
-    setLanguage(language === 'pt' ? 'en' : 'pt');
-  };
+function Projetos({ language: propLanguage, toggleLanguage: propToggleLanguage }) {
+  const [localLanguage, setLocalLanguage] = useState('pt');
+  const language = propLanguage ?? localLanguage;
+  const toggleLanguage = propToggleLanguage ?? (() => {
+    setLocalLanguage((lang) => (lang === 'pt' ? 'en' : 'pt'));
+  });
 
   const projectsData = {
     pt: {

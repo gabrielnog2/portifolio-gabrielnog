@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Header from "./components/Header"; 
 import Footer from "./components/Footer";
 import Walkman from "./components/Walkman";
@@ -10,31 +10,40 @@ import Contato from './sections/Contato';
 import "./index.css"; 
 
 function App() {
+  const [language, setLanguage] = useState('pt');
+
+  const toggleLanguage = () => {
+    setLanguage((lang) => (lang === 'pt' ? 'en' : 'pt'));
+  };
 
   const tracks = [
-    { 
-      id: "01", 
+    {
+      id: "01",
       vol: "VOL. 1",
-      title: "SOBRE MIM", 
-      component: <Sobre /> 
+      title: "SOBRE MIM",
+      audio: "/01 Hooked On a Feeling.m4a",
+      component: <Sobre language={language} toggleLanguage={toggleLanguage} />
     },
-    { 
-      id: "02", 
+    {
+      id: "02",
       vol: "VOL. 2",
-      title: "PROJETOS", 
-      component: <Projetos /> 
+      title: "PROJETOS",
+      audio: "/02 Go All the Way.m4a",
+      component: <Projetos language={language} toggleLanguage={toggleLanguage} />
     },
-    { 
-      id: "03", 
+    {
+      id: "03",
       vol: "VOL. 3",
-      title: "EXPERIÊNCIA", 
-      component: <Experiencia /> 
+      title: "EXPERIÊNCIA",
+      audio: "/03 Spirit In the Sky.m4a",
+      component: <Experiencia language={language} toggleLanguage={toggleLanguage} />
     },
-    { 
-      id: "04", 
+    {
+      id: "04",
       vol: "VOL. 4",
-      title: "CONTATO", 
-      component: <Contato /> 
+      title: "CONTATO",
+      audio: "/04 Moonage Daydream.m4a",
+      component: <Contato language={language} toggleLanguage={toggleLanguage} />
     }
   ];
 
@@ -71,11 +80,23 @@ function App() {
 
   const currentTrack = tracks[currentTrackIndex];
 
+  useEffect(() => {
+    if (!audioRef.current) return;
+    audioRef.current.src = currentTrack.audio;
+    audioRef.current.load();
+    if (isPlaying) {
+      audioRef.current
+        .play()
+        .catch(() => {
+         
+        });
+    }
+  }, [currentTrackIndex, currentTrack.audio, isPlaying]);
+
   return (
     <div className="app-container">
       
-      
-      <audio ref={audioRef} src="/awesome-mix.mp3" loop preload="auto"></audio>
+      <audio ref={audioRef} loop preload="auto" />
       
       <Header />
 
@@ -94,6 +115,7 @@ function App() {
           play={playMusic}
           stop={stopMusic}
           isPlaying={isPlaying}
+          language={language}
         />
       </div>
 

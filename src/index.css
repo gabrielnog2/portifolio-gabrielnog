@@ -80,19 +80,19 @@ body::after {
 
 .sci-fi-monitor {
   width: 100%;
-  min-height: 100%;  
-  height: auto;     
-  
-  background: transparent; 
-  border: none; 
+  min-height: 100%;
+  height: auto;
+
+  background: transparent;
+  border: none;
   box-shadow: none;
-  backdrop-filter: none; 
-  
-  padding: 180px 3rem 3rem 3rem; 
+  backdrop-filter: none;
+
+  padding: 180px 3rem 3rem 3rem;
   position: relative;
-  overflow-y: auto;
+  overflow-y: visible;
   font-family: 'Courier New', monospace;
-  color: #e0e0e0; 
+  color: #e0e0e0;
 }
 
 
@@ -122,16 +122,16 @@ body::after {
   bottom: 20px;
   right: 20px;
   z-index: 100;
-  transform: scale(0.45); /* Base de escala original */
+  transform: scale(0.45); 
   transform-origin: bottom right;
-  transition: all 0.3s ease; /* Faz o Walkman encolher suavemente */
+  transition: all 0.3s ease; 
 }
 
 /* ========================================= */
 /* RESPONSIVIDADE - ADAPTAÇÃO DE PAINÉIS     */
 /* ========================================= */
 
-
+/* TABLETS GRANDES E LAPTOPS MENORES */
 @media (max-width: 1024px) {
   .main-content-area {
     margin-right: 150px; 
@@ -141,37 +141,96 @@ body::after {
   }
 }
 
+
 @media (max-width: 900px) {
+  .app-container {
+    padding: 1rem; 
+  }
   .main-content-area {
-    margin-right: 0;
-    margin-bottom: 0; 
+    margin-right: 0; 
     min-height: 70vh;
   }
-  
-
   .sci-fi-monitor {
-    padding-bottom: 180px; 
+    padding: 140px 2rem 150px 2rem; 
   }
-
   .walkman-widget {
-   
-    right: auto;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%) scale(0.30);
-    transform-origin: bottom center;
+    right: 15px;
+    bottom: 15px;
+    transform: scale(0.30);
+    transform-origin: bottom right;
   }
 }
 
 
 @media (max-width: 600px) {
+  .app-container {
+    padding: 0.5rem; 
+  }
   .sci-fi-monitor {
-    padding-bottom: 150px; 
-    padding-left: 1.5rem; 
-    padding-right: 1.5rem;
+    
+    padding: 100px 1rem 220px 1rem; 
+  }
+  .walkman-widget {
+    transform: scale(0.22); 
+    right: 5px;
+    bottom: 5px;
+  }
+}
+
+/* ========================================= */
+/* BOTÃO DE IDIOMA GLOBAL (TODAS AS SEÇÕES)  */
+/* ========================================= */
+.language-toggle-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 30px;
+}
+
+.cyber-btn {
+  background: transparent;
+  color: #ffc107;
+  font-family: 'Michroma', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  padding: 8px 20px;
+  border: 1px solid #ffc107;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+}
+
+.cyber-btn:hover {
+  background: rgba(255, 193, 7, 0.2);
+  box-shadow: 0 0 15px rgba(255, 193, 7, 0.5);
+  text-shadow: 0 0 5px #ffc107;
+}
+
+/* ========================================= */
+/* RESPONSIVIDADE DO BOTÃO GLOBAL - CELULAR  */
+/* ========================================= */
+
+@media (max-width: 768px) {
+
+  .language-toggle-wrapper,
+  .projetos-top-controls,
+  .experiencia-top-controls {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important; 
+    align-items: center !important; 
+    justify-content: center !important;
+    margin-top: 30px !important; 
+    margin-bottom: 20px !important;
+    gap: 15px !important; 
   }
 
-  .walkman-widget {
-    transform: translateX(-50%) scale(0.25); 
+  .cyber-btn {
+    font-size: 0.65rem !important;
+    padding: 6px 15px !important;
+    margin: 0 auto !important; 
+    display: block !important;
   }
 }

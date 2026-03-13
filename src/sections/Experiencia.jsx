@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import './Experiencia.css';
 
-function Experiencia() {
-  const [language, setLanguage] = useState('pt');
+function Experiencia({ language: propLanguage, toggleLanguage: propToggleLanguage }) {
+  const [localLanguage, setLocalLanguage] = useState('pt');
+  const language = propLanguage ?? localLanguage;
+  const toggleLanguage = propToggleLanguage ?? (() => {
+    setLocalLanguage((lang) => (lang === 'pt' ? 'en' : 'pt'));
+  });
   const [activeExpIndex, setActiveExpIndex] = useState(0);
   const [isDecrypting, setIsDecrypting] = useState(false);
 
-  const toggleLanguage = () => {
-    setLanguage(language === 'pt' ? 'en' : 'pt');
-  };
 
   const handleMissionChange = (index) => {
     if (index === activeExpIndex) return;

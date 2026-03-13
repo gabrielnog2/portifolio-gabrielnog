@@ -1,18 +1,45 @@
 import React, { useState } from 'react';
 import './Sobre.css';
 
-function Sobre() {
-  const [language, setLanguage] = useState('pt'); 
+function Sobre({ language: propLanguage, toggleLanguage: propToggleLanguage }) {
+  const [localLanguage, setLocalLanguage] = useState('pt'); 
+  const language = propLanguage ?? localLanguage;
+  const toggleLanguage = propToggleLanguage ?? (() => {
+    setLocalLanguage((lang) => (lang === 'pt' ? 'en' : 'pt'));
+  });
 
-  const toggleLanguage = () => {
-    setLanguage(language === 'pt' ? 'en' : 'pt');
-  };
+  const [showInstructions, setShowInstructions] = useState(false);
+
+  const instructionsText = language === 'en'
+    ? {
+        title: "Navigation Instructions",
+        lines: [
+          "PLAY plays music.",
+          "FWD moves to the next section.",
+          "REV returns to the previous section.",
+          "STOP stops the music.",
+          "Use these controls to browse the portfolio while listening."
+        ],
+        close: "CLOSE"
+      }
+    : {
+        title: "Instruções de Navegação",
+        lines: [
+          "PLAY toca música.",
+          "FWD vai para a próxima seção.",
+          "REV volta para a seção anterior.",
+          "STOP para a música.",
+          "Use esses controles para navegar pelo portfólio enquanto ouve."
+        ],
+        close: "FECHAR"
+      };
 
   const content = {
     pt: {
       title: "INICIANDO SISTEMA...",
       subtitle: "SOBRE MIM",
-      bio1: "Olá! Sou Gabriel Nogueira, estudante de Engenharia de Software na PUC Minas. Possuo um ano de experiência na área de tecnologia voltada a suporte de sistemas e desenvolvimento de agentes de IA. Além disso, sou graduado em Administração pela UFMG e já atuei nas áreas de Consultoria, Marketing e Financeira.",
+      bio1: "Olá! Sou Gabriel Noguera, estudante de Engenharia de Software na PUC Minas. Possuo um ano de experiência na área de tecnologia voltada a suporte de sistemas e desenvolvimento de agentes de IA. Além disso, já atuei nas áreas de Consultoria, Marketing e Financeira.",
+      bio2: "Recentemente, tenho me interessado por DevOps e Cloud Engineering.",
       btn: "SWITCH TO ENGLISH",
       techTitle: "LINGUAGENS",
       frameTitle: "FRAMEWORKS"
@@ -20,7 +47,8 @@ function Sobre() {
     en: {
       title: "SYSTEM BOOT...",
       subtitle: "ABOUT ME",
-      bio1: "Hello! I'm Gabriel Nogueira, a Software Engineering student at PUC Minas. I have one year of experience in the tech industry focused on IT support and AI agent development. Additionally, I hold a degree in Business Administration from UFMG and have previous experience in Consulting, Marketing, and Finance.",
+      bio1: "Hello! I'm Gabriel Noguera, a Software Engineering student at PUC Minas. I have one year of experience in the tech industry focused on IT support and AI agent development. Additionally, I hold a degree in Business Administration from UFMG and have previous experience in Consulting, Marketing, and Finance.",
+      bio2: "Recently, I've been getting interested in DevOps and Cloud Engineering.",
       btn: "MUDAR PARA PORTUGUÊS",
       techTitle: "LANGUAGES",
       frameTitle: "FRAMEWORKS"
@@ -53,6 +81,7 @@ function Sobre() {
           
           <div className="bio-text">
             <p>{content[language].bio1}</p>
+            <p>{content[language].bio2}</p>
           </div>
 
           

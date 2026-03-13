@@ -3,12 +3,15 @@ import emailjs from '@emailjs/browser';
 import EMAILJS_CONFIG from '../config/emailJsConfig';
 import './Contato.css';
 
-function Contato() {
-  const [language, setLanguage] = useState('pt');
+function Contato({ language: propLanguage, toggleLanguage: propToggleLanguage }) {
+  const [localLanguage, setLocalLanguage] = useState('pt');
+  const language = propLanguage ?? localLanguage;
+  const toggleLanguage = propToggleLanguage ?? (() => {
+    setLocalLanguage((lang) => (lang === 'pt' ? 'en' : 'pt'));
+  });
   const [formData, setFormData] = useState({ nome: '', email: '', mensagem: '' });
   const [status, setStatus] = useState('IDLE'); 
 
-  const toggleLanguage = () => setLanguage(language === 'pt' ? 'en' : 'pt');
 
   const content = {
     pt: {
@@ -17,9 +20,9 @@ function Contato() {
       btnLang: "SWITCH TO ENGLISH",
       channelsTitle: "FREQUÊNCIAS ABERTAS //",
       formTitle: "TERMINAL DE MENSAGENS INTERGALÁCTICAS",
-      nameStr: "CODENOME",
-      emailStr: "COORDENADA (E-MAIL)",
-      msgStr: "CARGA ÚTIL (MENSAGEM)",
+      nameStr: "CODENOME (SEU NOME)",
+      emailStr: "COORDENADA (SEU E-MAIL)",
+      msgStr: "CARGA ÚTIL (MANDE UMA MENSAGEM PARA MIM)",
       btnFire: "ACIONAR HYPERDRIVE E ENVIAR",
       statusSending: "ROTEANDO PELO IMPÉRIO NOVA...",
       statusSuccess: "SINAL ENTREGUE! TOCA A FITA.",
@@ -31,9 +34,9 @@ function Contato() {
       btnLang: "MUDAR PARA PORTUGUÊS",
       channelsTitle: "OPEN FREQUENCIES //",
       formTitle: "INTERGALACTIC MESSAGE TERMINAL",
-      nameStr: "CALLSIGN",
-      emailStr: "COORDINATES (E-MAIL)",
-      msgStr: "PAYLOAD (MESSAGE)",
+      nameStr: "CALLSIGN (YOUR NAME)",
+      emailStr: "COORDINATES (YOUR E-MAIL)",
+      msgStr: "PAYLOAD (SEND ME A MESSAGE)",
       btnFire: "ENGAGE HYPERDRIVE & SEND",
       statusSending: "ROUTING VIA NOVA EMPIRE...",
       statusSuccess: "SIGNAL DELIVERED! HIT PLAY.",
@@ -77,8 +80,8 @@ function Contato() {
     <div className="contato-container fade-in">
      
       <div className="projetos-top-controls">
-        <div className="system-readout ravager-readout">
-          <span className="blinking-dot orange-dot"></span>
+        <div className="system-readout">
+          <span className="blinking-dot"></span>
           SECURE
         </div>
         <button className="cyber-btn" onClick={toggleLanguage}>
@@ -112,7 +115,7 @@ function Contato() {
               <span className="target-name">E-MAIL UPLINK</span>
               <div className="target-line"></div>
             </a>
-            <a href="https://instagram.com" className="milano-target" target="_blank" rel="noopener noreferrer">
+            <a href="https://instagram.com/gabrielnog_4" className="milano-target" target="_blank" rel="noopener noreferrer">
               <span className="icon-box">💬</span>
               <span className="target-name">COMUNICADOR</span>
               <div className="target-line"></div>
@@ -196,7 +199,7 @@ function Contato() {
                   className={`hyperdrive-btn ${status === 'SENDING' ? 'locked' : ''}`}
                   disabled={status === 'SENDING'}
                 >
-                  <span className="btn-icon">🚀</span> {current.btnFire}
+                  <span className="btn-icon"></span> {current.btnFire}
                 </button>
               </div>
             </div>
