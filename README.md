@@ -52,6 +52,7 @@
 - [Tecnologias Utilizadas](#-tecnologias-utilizadas)
 - [Arquitetura](#-arquitetura)
 - [Documentações utilizadas](#-documentações-utilizadas)
+- [Deploy](#-deploy)
   
 ---
 
@@ -69,7 +70,7 @@ Este projeto consiste no desenvolvimento de um Website de Portfólio Profissiona
 
 O portifólio simula um Walkman dos anos 80 mas com estética cósmica e futurista. Cada seção do portfólio representa uma faixa, somente navegável por meio de controles simulando botões físicos, promovendo uma experiência interativa diferenciada.
 
-- 🎵 **Navegação:** Cada seção (Sobre Mim, Projetos, Experiências e Contato) funciona como uma música da fita, permitindo avançar, retroceder e tocar música utilizando botões simulados.
+- 🎵 **Navegação:** Cada seção (Sobre Mim, Projetos, Experiências e Contato) funciona como uma música da fita, permitindo avançar, retroceder e tocar música utilizando botões simulados- O botão PLAY serve para tocar músicas do Awesome Mix Vol.1, o botão STOP para pausar a música, e os botões REV e FWD para retroceder e avançar tanto de seção do portifólio quanto de música.
 - 🖥️ **Single Page Application (SPA):** A troca de conteúdo acontece dinamicamente sem recarregamento da página, utilizando gerenciamento de estado com React.
 - 🗂️ **Timeline de Projetos:** Exibição organizada dos projetos do mais antigo ao mais recente, contendo descrição, tecnologias utilizadas e link para o repositório no GitHub.
 - 📊 **Relatórios Exportáveis:** Exportação de dados em PDF, CSV ou Excel.
@@ -82,6 +83,7 @@ O portifólio simula um Walkman dos anos 80 mas com estética cósmica e futuris
 
 💻 React: Biblioteca principal para a construção da interface.
 
+🎨 CSS3/SVG
 
 ⚙️ Vite: Ferramenta de build para um desenvolvimento rápido e otimizado.
 
@@ -118,6 +120,43 @@ Liste aqui links para documentação técnica, referências de bibliotecas compl
 * 📖 **Documentação Interna:** [Design System do Projeto](./docs/design-system.md)
 
 
+
+---
+## 🚀 Deploy
+Instruções claras de como foi feito o deploy em produção.
+
+1.  **Build do Projeto:**
+    Execute o build separadamente para os dois artefatos (JAR para o Back-end e arquivos estáticos para o Front-end).
+
+```bash
+# 1. Build do Front-end (React/Vite) - Gera a pasta /dist com arquivos estáticos
+cd frontend
+npm run build
+
+# 2. Build do Back-end (Spring Boot/Maven) - Gera o arquivo .jar executável em /target
+cd ../backend
+./mvnw clean package
+```
+
+2.  **Configuração do Ambiente de Produção:** Defina as variáveis de ambiente no seu provedor (e.g., Vercel, Railway, Heroku, DigitalOcean).
+
+> 🔑 **Variáveis Cruciais:** Certifique-se de configurar as variáveis de **conexão com o banco de dados** (`SPRING_DATASOURCE_URL`, etc.) para o Back-end e a **URL da API de produção** (`VITE_API_URL`) para o Front-end.
+
+3.  **Execução em Produção:**
+    A forma de execução depende do seu provedor, mas geralmente envolve o seguinte:
+
+```bash
+# ☕ Execução do Back-end Spring Boot (Java JAR)
+# Este comando inicia a API usando o artefato JAR gerado.
+java -jar backend/target/nome-do-do-projeto-0.0.1-SNAPSHOT.jar
+
+# 🟢 Execução do Front-end (React/Vite)
+# O Front-end (arquivos estáticos) não é executado via Node, mas servido por um servidor web.
+# Exemplo de servidor de arquivos estáticos (usando Nginx, Vercel, Netlify, etc.)
+# Para simular a produção localmente ou rodar em uma VPS simples, use o pacote 'serve':
+npm install -g serve
+serve -s frontend/dist
+```
 
 ---
 
